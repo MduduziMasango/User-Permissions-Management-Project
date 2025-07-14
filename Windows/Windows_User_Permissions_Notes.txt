@@ -1,0 +1,61 @@
+===========================================================
+Windows User & Permissions Management Project Notes
+===========================================================
+
+Objective:
+Simulate real-world user account and folder permission management on Windows, including user creation, access restriction, troubleshooting access errors, and restoring permissions.
+
+-----------------------------------------------------------
+Steps Performed:
+-----------------------------------------------------------
+
+1. Create a New Standard User (`TempUser`):
+   - Navigated to: Settings > Accounts > Family & Other users
+   - Selected “Add someone else to this PC”
+   - Chose “Add a user without a Microsoft account”
+   - Created a local standard account named: TempUser
+
+2. Create a Folder for Permission Testing:
+   - Created: C:\TestAccess
+   - Right-clicked > Properties > Security > Edit > Add
+   - Added TempUser with initial permission: Read & execute
+
+3. Log in as TempUser and Test Access:
+   - Logged out of Admin
+   - Logged in as TempUser
+   - Verified TempUser could open folder but not create files
+
+4. Simulate Access Denied:
+   - Logged back in as Administrator
+   - Removed all permissions for TempUser on C:\TestAccess
+   - TempUser now received “Access Denied” trying to open folder
+
+5. Restore Access:
+   - Reassigned Read & Write permission to TempUser
+   - TempUser could now access and modify folder contents
+
+-----------------------------------------------------------
+Tools & Skills Demonstrated:
+-----------------------------------------------------------
+- NTFS folder security settings
+- Account provisioning (local standard user)
+- Simulating & resolving permission issues
+- GUI troubleshooting and permission repair
+
+-----------------------------------------------------------
+Lessons Learned:
+-----------------------------------------------------------
+- How to use Windows to manage local user accounts
+- Practical NTFS permission control and inheritance behavior
+- Hands-on troubleshooting of access-denied errors
+- Principle of least privilege in access control
+
+-----------------------------------------------------------
+Screenshots:
+-----------------------------------------------------------
+User creation (Settings)
+Folder properties > Security tab (Before & After)
+"Access Denied" screen
+Restored access from TempUser
+
+===========================================================

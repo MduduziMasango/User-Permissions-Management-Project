@@ -1,0 +1,72 @@
+===========================================================
+Ubuntu User & Permissions Management Project Notes
+===========================================================
+
+Objective:
+Simulate real-world Linux user creation, directory permission management, and troubleshooting file access using standard Linux commands.
+
+-----------------------------------------------------------
+Steps Performed:
+-----------------------------------------------------------
+
+1. Create a New User (`tempuser`):
+   Command:
+     sudo adduser tempuser
+   - Set password and user details
+   - Verified creation with: cat /etc/passwd
+
+2. Create a Test Directory:
+   Command:
+     sudo mkdir /home/testfolder
+
+3. Assign Ownership to tempuser:
+   Command:
+     sudo chown tempuser:tempuser /home/testfolder
+
+4. Set Initial Permissions:
+   Command:
+     sudo chmod 700 /home/testfolder
+   - Permissions allow full access to the owner only
+
+5. Test Access as tempuser:
+   Command:
+     su - tempuser
+     cd /home/testfolder
+   - Access successful
+
+6. Simulate Denied Access:
+   As root, removed permissions:
+     sudo chmod 000 /home/testfolder
+   - As tempuser, received "Permission denied" on folder access
+
+7. Restore Permissions:
+   Command:
+     sudo chmod 700 /home/testfolder
+   - Access restored for tempuser
+
+-----------------------------------------------------------
+Tools & Skills Demonstrated:
+-----------------------------------------------------------
+- Linux user management (`adduser`)
+- Directory ownership (`chown`) and permissions (`chmod`)
+- Command-line troubleshooting
+- User switching (`su`)
+- Testing permission boundaries
+
+-----------------------------------------------------------
+ Lessons Learned:
+-----------------------------------------------------------
+- The Linux permission model (rwx)
+- Difference between ownership and permission
+- How to isolate permission errors using CLI
+- Real-world troubleshooting of restricted access
+
+-----------------------------------------------------------
+Screenshots:
+-----------------------------------------------------------
+adduser command and prompts
+chmod/chown permission setups
+Access Denied terminal output
+Restored access as tempuser
+
+===========================================================
